@@ -15,7 +15,7 @@ function longestCommonPrefix(strs) {
 
     return strs[0];
 }
-strs = ["flower","flow","flight"]
+strs = ["flower","flow","floght"]
 console.log(longestCommonPrefix(strs))
 
 //output : flo
