@@ -43,3 +43,7 @@ function findFirstoccuranceinthestringOptimization(haystack, needle) {
 }
 
 console.log(findFirstoccuranceinthestringOptimization('rabia', 'ia'))
+
+
+//BigO O(n)
+//time O(1)
