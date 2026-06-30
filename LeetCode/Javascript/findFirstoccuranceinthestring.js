@@ -22,7 +22,7 @@ function findFirstoccuranceinthestring(haystack, needle){
 console.log(findFirstoccuranceinthestring('rabia', 'ia'))
 
 
-findFirstoccuranceinthestringOptimization(haystack, needle){
+function findFirstoccuranceinthestringOptimization(haystack, needle) {
      for (let i = 0; i <= haystack.length - needle.length; i++) {
 
         let found = true;
