@@ -14,3 +14,6 @@ function isPalindrome(x) {
 }
 
 console.log(isPalindrome(1221)); 
+
+//Time: O(log₁₀ n) because each iteration removes one digit from x.
+//Space: O(1) because only a few variables are used.
