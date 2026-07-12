@@ -126,6 +126,31 @@ func (bst *BST) DFSPreOrder() []int {
 	return data
 }
 
+func (bst *BST) DFSPOSTOrder() []int {
+	var data []int
+
+	var traverse func(node *Node)
+
+	traverse = func(node *Node) {
+		if node == nil {
+			return
+		}
+
+		// Traverse left subtree
+		traverse(node.Left)
+
+		// Traverse right subtree
+		traverse(node.Right)
+
+		// Visit the current node
+		data = append(data, node.Value)
+	}
+
+	traverse(bst.Root)
+
+	return data
+}
+
 func main() {
 	tree := &BST{}
 
@@ -157,4 +182,5 @@ func main() {
 
 	fmt.Println(tree.BFS())
 	fmt.Println(tree.DFSPreOrder())
+	fmt.Println(tree.DFSPOSTOrder())
 }
