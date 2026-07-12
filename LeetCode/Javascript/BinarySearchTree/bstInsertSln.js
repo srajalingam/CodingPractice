@@ -87,4 +87,31 @@ tree.insert(2)
 tree.insert(6)
 
 console.log(tree)
+
+
 console.log(tree.BFS())
+//BFS -pseudocode
+// 1. If the tree is empty
+//       Return an empty list
+
+// 2. Create an empty queue
+
+// 3. Create an empty result list
+
+// 4. Add the root node to the queue
+
+// 5. While the queue is not empty
+
+//       a. Remove the first node from the queue
+
+//       b. Add the node's value to the result list
+
+//       c. If the node has a left child
+//              Add the left child to the queue
+
+//       d. If the node has a right child
+//              Add the right child to the queue
+
+// 6. Return the result list
+// Time: O(n) — every node is visited exactly once.
+// Space: O(n) — in the worst case, the queue may contain up to an entire level of the tree (or many nodes for a broad tree).
