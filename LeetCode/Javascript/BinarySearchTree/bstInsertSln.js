@@ -75,6 +75,22 @@ class BST{
         }
         return data;
     }
+
+    //Depth first search pre order
+    DFSPreOrder(){
+        var data=[];
+        function traverse(node){
+            data.push(node.value)
+            if(node.left){
+                traverse(node.left)
+            }
+            if(node.right){
+                traverse(node.right)
+            }
+        }
+        traverse(this.root)
+        return data
+    }
 }
 
 var tree = new BST();
@@ -115,3 +131,18 @@ console.log(tree.BFS())
 // 6. Return the result list
 // Time: O(n) — every node is visited exactly once.
 // Space: O(n) — in the worst case, the queue may contain up to an entire level of the tree (or many nodes for a broad tree).
+
+console.log(tree.DFSPreOrder())
+    // DFSPreOrder(node)
+
+    // 1. If node is null
+    //     Return
+
+    // 2. Visit the current node
+    //     Add node.value to the result
+
+    // 3. DFSPreOrder(node.left)
+
+    // 4. DFSPreOrder(node.right)
+
+    //O(n)
