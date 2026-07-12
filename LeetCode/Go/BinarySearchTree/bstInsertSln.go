@@ -69,6 +69,36 @@ func (bst *BST) Find(value int) *Node {
 	return nil
 }
 
+// BFS traverses the tree level by level
+func (bst *BST) BFS() []int {
+	if bst.Root == nil {
+		return []int{}
+	}
+
+	var data []int
+	var queue []*Node
+
+	queue = append(queue, bst.Root)
+
+	for len(queue) > 0 {
+		// Remove first element (dequeue)
+		node := queue[0]
+		queue = queue[1:]
+
+		data = append(data, node.Value)
+
+		if node.Left != nil {
+			queue = append(queue, node.Left)
+		}
+
+		if node.Right != nil {
+			queue = append(queue, node.Right)
+		}
+	}
+
+	return data
+}
+
 func main() {
 	tree := &BST{}
 
@@ -97,4 +127,6 @@ func main() {
 	} else {
 		fmt.Println("Not Found")
 	}
+
+	fmt.Println(tree.BFS())
 }
