@@ -91,6 +91,22 @@ class BST{
         traverse(this.root)
         return data
     }
+
+     //Depth first search Post order
+    DFSPOSTOrder(){
+        var data=[];
+        function traverse(node){
+            if(node.left){
+                traverse(node.left)
+            }
+            if(node.right){
+                traverse(node.right)
+            }
+            data.push(node.value)
+        }
+        traverse(this.root)
+        return data
+    }
 }
 
 var tree = new BST();
@@ -146,3 +162,5 @@ console.log(tree.DFSPreOrder())
     // 4. DFSPreOrder(node.right)
 
     //O(n)
+
+console.log(tree.DFSPOSTOrder())
