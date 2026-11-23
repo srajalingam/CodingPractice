@@ -44,9 +44,43 @@ class SingleLinkedList{
         }
         return temp
     }
+
+    unshift(value){
+        const newNode=new Node(value)
+        if(!this.head){
+            this.head=newNode
+            this.tail=newNode
+        }else{
+            newNode.next=this.head
+            this.head=newNode
+        }
+        this.length++
+    }
+
+    shift(){
+        if(!this.head) return undefined
+        let temp=this.head
+        this.head=this.head.next
+        this.length--
+        if(this.length==0){
+            this.tail=null
+        }
+        temp.next=null
+        return temp
+    }
+
+    get(index){
+        if(index<0 || index>=this.length) return undefined
+        let temp=this.head
+        for(let i=0;i<index;i++){
+            temp=temp.next
+        }
+        return temp
+    }
 }
 
 let myLinkedList= new SingleLinkedList(4)
 myLinkedList.push(5)
 myLinkedList.push(6)
-console.log(myLinkedList)
+
+console.log(myLinkedList.get(2))
