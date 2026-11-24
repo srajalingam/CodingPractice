@@ -99,6 +99,20 @@ class SingleLinkedList{
         this.length++
         return true
     }
+
+    remove(index){
+        if(index<0 || index>this.length) return undefined
+        if(index==this.length-1) return this.pop()
+        if(index==0) return this.shift(value);
+
+        const before=this.get(index-1);
+        const temp =before.next
+
+        before.next=temp.next
+        temp.next=null
+        this.length--
+        return temp
+    }
 }
 
 let myLinkedList= new SingleLinkedList(1)
