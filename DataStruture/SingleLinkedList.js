@@ -86,10 +86,23 @@ class SingleLinkedList{
         }
         return false
     }
+
+    insert(index,value){
+        if(index<0 || index>this.length) return false
+        if(index==this.length) return this.push(value)
+        if(index==0) return this.unshift(value)
+        
+        const newNode=new Node(value)
+        const temp=this.get(index-1)
+        newNode.next=temp.next
+        temp.next=newNode
+        this.length++
+        return true
+    }
 }
 
-let myLinkedList= new SingleLinkedList(4)
-myLinkedList.push(5)
-myLinkedList.push(6)
-
-console.log(myLinkedList.get(2))
+let myLinkedList= new SingleLinkedList(1)
+myLinkedList.push(2)
+myLinkedList.push(3)
+myLinkedList.insert(1,4)
+console.log(myLinkedList)
